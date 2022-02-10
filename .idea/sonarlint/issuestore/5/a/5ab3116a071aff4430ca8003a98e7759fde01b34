@@ -1,18 +1,0 @@
-
-b	java:S112;"FDefine and throw a dedicated exception instead of using a generic one.(¦á˜¿8Õöóƒî/
-J
-java:S3740-"/Provide the parametrized type for this generic.(Öœ‘Ôýÿÿÿÿ
-Q
-java:S3740C"/Provide the parametrized type for this generic.(Öœ‘Ôýÿÿÿÿ8Ööóƒî/
-À
-java:S1130&"Remove the declaration of thrown exception 'org.springframework.web.bind.MissingServletRequestParameterException', as it cannot be thrown from method's body.(Õ’þ•þÿÿÿÿ8×ï¥ƒî/
-À
-java:S11308"Remove the declaration of thrown exception 'org.springframework.web.bind.MissingServletRequestParameterException', as it cannot be thrown from method's body.(Õ’þ•þÿÿÿÿ8ßöóƒî/
-@
-java:S1068"*Remove this unused "logger" private field.(ÐøôØ
-f	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¦½º
-k	java:S117)"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ð¥ƒýÿÿÿÿ
-k	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öœ‘Ôýÿÿÿÿ
-m	java:S117="QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÑëŸ8ãöóƒî/
-r	java:S117>"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(’Ð¥ƒýÿÿÿÿ8ãöóƒî/
-r	java:S117C"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Öœ‘Ôýÿÿÿÿ8ãöóƒî/
