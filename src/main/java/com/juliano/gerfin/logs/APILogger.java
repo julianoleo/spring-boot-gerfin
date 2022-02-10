@@ -24,11 +24,12 @@ public class APILogger {
     private static final String REQUISICAO_KEY = "requisicao";
     private static final String RESPOSTA_KEY = "resposta";
     private static final String HEADER_APPID = "x-itau.appid";
+    private static final String HOST_ORIGEM = "host";
 
-    public static void ok(Object response, HttpHeaders headers) {
+    public static void ok(Object response, HttpHeaders header) {
         logger.info(
                 "{}{}",
-                kv(REQUISICAO_KEY, getRequisicaoDto(filterHeader(headers))),
+                kv(REQUISICAO_KEY, getRequisicaoDto(filterHeader(header))),
                 kv(RESPOSTA_KEY, new ResponseDto<>(
                         response,
                         HttpStatus.OK.getReasonPhrase(),
@@ -105,11 +106,17 @@ public class APILogger {
         return new RequisicaoDto(request.getMethod(), url, header);
     }
 
-    public static HttpHeaders filterHeader(HttpHeaders headers) {
-        List<String> appid = headers.get(HEADER_APPID);
+    public static HttpHeaders filterHeader(HttpHeaders header) {
+        List<String> appid = header.get(HOST_ORIGEM);
         HttpHeaders filteredHeaders = new HttpHeaders();
-        if(appid != null && !appid.isEmpty()) filteredHeaders.set(HEADER_APPID, appid.get(0));
+        if(appid != null && !appid.isEmpty()) filteredHeaders.set(HOST_ORIGEM, appid.get(0));
         return filteredHeaders;
     }
 
+//    public static HttpHeaders filterHeader(HttpHeaders header) {
+//        List<String> appid = header.get(HEADER_APPID);
+//        HttpHeaders filteredHeaders = new HttpHeaders();
+//        if(appid != null && !appid.isEmpty()) filteredHeaders.set(HEADER_APPID, appid.get(0));
+//        return filteredHeaders;
+//    }
 }
