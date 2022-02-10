@@ -13,11 +13,7 @@ d
 4src/main/java/com/juliano/gerfin/model/ContaDto.java,3\0\30c407303f2236b1040ad7276c11994ce4313470
 a
 1src/main/java/com/juliano/gerfin/model/Conta.java,5\a\5adbbec2a862272d9cc42925fd3d795036237c30
-w
-Gsrc/main/java/com/juliano/gerfin/repository/MovimentacaoRepository.java,e\0\e0b3917b62556dc733fa6a60dc602df8ae278e58
 h
 8src/main/java/com/juliano/gerfin/model/Movimentacao.java,c\0\c0cc934575238a5d73ad5de4272244c3b6fb0b96
 w
 Gsrc/main/java/com/juliano/gerfin/controller/MovimentacaoController.java,a\7\a769bdc56abc1cca081eead09ac7b899883ec797
-q
-Asrc/main/java/com/juliano/gerfin/service/MovimentacaoService.java,1\4\1422af1391fc38a67a2f8a21d19acc7c2bed7a34
