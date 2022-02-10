@@ -1,6 +1,7 @@
 package com.juliano.gerfin.service;
 
 import com.juliano.gerfin.exceptions.NoContentRuntimeException;
+import com.juliano.gerfin.exceptions.NotFoundException;
 import com.juliano.gerfin.model.Movimentacao;
 import com.juliano.gerfin.repository.MovimentacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,12 +41,17 @@ public class MovimentacaoService {
 
     public Movimentacao update(String id, Movimentacao movimentacao) {
         Optional<Movimentacao> _mov = movimentacaoRepository.findById(id);
-        if (movimentacao.getDataPgto() != null) { _mov.orElseThrow().setDataPgto(movimentacao.getDataPgto()); }
-        if (movimentacao.getDescricao() != null) { _mov.orElseThrow().setDescricao(movimentacao.getDescricao()); }
-        if (movimentacao.getDataVcto() != null) { _mov.orElseThrow().setDataVcto(movimentacao.getDataVcto()); }
-        if (movimentacao.getValorMov() != null) { _mov.orElseThrow().setValorMov(movimentacao.getValorMov()); }
-        if (movimentacao.getValorPago() != null) { _mov.orElseThrow().setValorPago(movimentacao.getValorPago()); }
-        return movimentacaoRepository.save(_mov.orElseThrow());
+        if(_mov.isEmpty()){
+            throw new NotFoundException("Movimentação Inexistente.");
+        }
+        else {
+            if (movimentacao.getDataPgto() != null) { _mov.orElseThrow().setDataPgto(movimentacao.getDataPgto()); }
+            if (movimentacao.getDescricao() != null) { _mov.orElseThrow().setDescricao(movimentacao.getDescricao()); }
+            if (movimentacao.getDataVcto() != null) { _mov.orElseThrow().setDataVcto(movimentacao.getDataVcto()); }
+            if (movimentacao.getValorMov() != null) { _mov.orElseThrow().setValorMov(movimentacao.getValorMov()); }
+            if (movimentacao.getValorPago() != null) { _mov.orElseThrow().setValorPago(movimentacao.getValorPago()); }
+            return movimentacaoRepository.save(_mov.orElseThrow());
+        }
      }
 }
 
