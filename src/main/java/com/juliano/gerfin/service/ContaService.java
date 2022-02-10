@@ -25,8 +25,8 @@ public class ContaService {
         }
     }
 
-    public Conta findById(String id) {
-        return contaRepository.findById(id).orElseThrow();
+    public Optional<Conta> findById(String id) {
+        return contaRepository.findById(id);
     }
 
     public Conta buscaIdConta(String numAgencia, String numConta) {
