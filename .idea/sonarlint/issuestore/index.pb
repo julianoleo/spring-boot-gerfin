@@ -13,10 +13,6 @@ d
 4src/main/java/com/juliano/gerfin/model/ContaDto.java,3\0\30c407303f2236b1040ad7276c11994ce4313470
 a
 1src/main/java/com/juliano/gerfin/model/Conta.java,5\a\5adbbec2a862272d9cc42925fd3d795036237c30
-j
-:src/main/java/com/juliano/gerfin/service/ContaService.java,1\3\13d853f5681742eab2a26f10dd9604dc00d0b04b
-p
-@src/main/java/com/juliano/gerfin/repository/ContaRepository.java,d\5\d5f95e0f878f879316e768bb4dc6a4b982617c14
 w
 Gsrc/main/java/com/juliano/gerfin/repository/MovimentacaoRepository.java,e\0\e0b3917b62556dc733fa6a60dc602df8ae278e58
 h
