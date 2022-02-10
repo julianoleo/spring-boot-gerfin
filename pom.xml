@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.juliano</groupId>
-	<artifactId>apiconta</artifactId>
+	<artifactId>apigerfin</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>API Spring MongoDB Para Gestão de Contas</name>
 	<description>API Spring MongoDB Para Gestão de Contas</description>
@@ -51,11 +51,10 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.0</version>
 				<configuration>
-					<source>11</source>
-					<target>11</target>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
