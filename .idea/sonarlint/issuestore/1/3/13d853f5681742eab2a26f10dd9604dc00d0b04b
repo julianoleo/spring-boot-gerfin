@@ -1,0 +1,11 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(üíú×ÿÿÿÿÿ
+`	java:S112&"FDefine and throw a dedicated exception instead of using a generic one.(«‰Ïûûÿÿÿÿ
+[	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(Æî¡
+W
+java:S11262"AReplace this if-then-else statement by a single return statement.(Ö¬‰À
+Q	java:S1259"<This block of commented-out lines of code should be removed.(¥“›¯
+e	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¶çùF
+f	java:S117("QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÕÍ¬Ë
+@
+java:S5411%"*Use the primitive boolean expression here.(õ‹¨ç
