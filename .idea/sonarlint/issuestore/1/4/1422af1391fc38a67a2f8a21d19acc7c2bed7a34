@@ -1,0 +1,7 @@
+
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(éØßÓüÿÿÿÿ
+`	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(†£ŠÁÿÿÿÿÿ
+V	java:S1257"<This block of commented-out lines of code should be removed.(ãÂôíùÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ëƒüðüÿÿÿÿ
+f	java:S117""QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ñ‰â
+f	java:S117-"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãåœå
