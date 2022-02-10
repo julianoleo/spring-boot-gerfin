@@ -30,11 +30,11 @@ public class MovimentacaoService {
 
     public Movimentacao insert(Movimentacao mov, String idConta) {
         var _conta = contaService.findById(idConta);
-        if(_conta.getNumConta().isEmpty()) {
-            throw new NoContentRuntimeException("Conta Inexistente.");
+        if(_conta.isEmpty()) {
+            throw new NotFoundException("Conta Inexistente.");
         }
         else {
-            mov.setConta(_conta);
+            mov.setConta(_conta.orElseThrow());
             return movimentacaoRepository.insert(mov);
         }
     }
