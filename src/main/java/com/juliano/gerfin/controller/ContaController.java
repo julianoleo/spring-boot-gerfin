@@ -31,17 +31,17 @@ public class ContaController {
             HttpServletRequest request,
             @RequestParam(name = "agencia")  String agencia,
             @RequestParam(name = "conta")  String conta,
-            @RequestHeader HttpHeaders headers
+            @RequestHeader HttpHeaders header
     ) throws MissingServletRequestParameterException {
         try {
             var _result = contaService.buscaIdConta(agencia, conta);
             var _response = new ResponseEntity<>(_result, HttpStatus.OK);
             var _responseLog = new ResponseDto<Conta>(_result);
-            APILogger.ok(_responseLog.getData(), APILogger.filterHeader(headers));
+            APILogger.ok(_responseLog.getData(), APILogger.filterHeader(header));
             return _response;
         } catch (Exception e) {
             var _responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-            //logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
+            //logs.logRequest(request, header, _responseEntity, LogType.ERROR, e.getMessage());
             return _responseEntity;
         }
     }
