@@ -1,5 +1,6 @@
 package com.juliano.gerfin.service;
 
+import com.juliano.gerfin.exceptions.NoContentRuntimeException;
 import com.juliano.gerfin.model.Movimentacao;
 import com.juliano.gerfin.repository.MovimentacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +30,7 @@ public class MovimentacaoService {
     public Movimentacao insert(Movimentacao mov, String idConta) {
         var _conta = contaService.findById(idConta);
         if(_conta.getNumConta().isEmpty()) {
-            throw new RuntimeException("Conta Inexistente.");
+            throw new NoContentRuntimeException("Conta Inexistente.");
         }
         else {
             mov.setConta(_conta);

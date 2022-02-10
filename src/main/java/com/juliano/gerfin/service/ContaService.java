@@ -1,5 +1,6 @@
 package com.juliano.gerfin.service;
 
+import com.juliano.gerfin.exceptions.NoContentRuntimeException;
 import com.juliano.gerfin.model.Conta;
 import com.juliano.gerfin.repository.ContaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class ContaService {
     public Optional<Conta> findByNumAgenciaAndNumConta(String numAgencia, String numConta) {
         var _conta = contaRepository.findByNumAgenciaAndNumConta(numAgencia, numConta);
         if(_conta.isEmpty()) {
-            throw new RuntimeException("Conta não encontrada.");
+            throw new NoContentRuntimeException("Conta não encontrada.");
         }
         else {
             return _conta;
@@ -33,9 +34,9 @@ public class ContaService {
         return conta;
     }
 
-    public Conta insert(Conta conta) throws Exception {
+    public Conta insert(Conta conta) {
         if(contaExiste(conta)) {
-            throw new Exception("Conta já cadastrada.");
+            throw new NoContentRuntimeException("Conta não existe.");
         } else {
             var _conta = new Conta(
                     conta.getNumAgencia(),
