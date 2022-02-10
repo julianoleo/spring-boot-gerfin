@@ -7,8 +7,6 @@ _
 /src/main/java/com/juliano/gerfin/logs/Logs.java,7\d\7d035e290a8ae0078c376c953e0318ffcb4c80d9
 m
 =src/main/java/com/juliano/gerfin/logs/LogRequestResponse.java,2\f\2f0f7d106acb1b93cb66583e7e941324370bab2f
-y
-Isrc/main/java/com/juliano/gerfin/ApiGerenciadorFinanceiroApplication.java,c\7\c763fc49916175fbd4c5c4cc9ebbf8b4a656179f
 d
 4src/main/java/com/juliano/gerfin/model/ContaDto.java,3\0\30c407303f2236b1040ad7276c11994ce4313470
 a
@@ -17,8 +15,6 @@ h
 8src/main/java/com/juliano/gerfin/model/Movimentacao.java,c\0\c0cc934575238a5d73ad5de4272244c3b6fb0b96
 w
 Gsrc/main/java/com/juliano/gerfin/controller/MovimentacaoController.java,a\7\a769bdc56abc1cca081eead09ac7b899883ec797
-9
-	README.md,8\e\8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 p
 @src/main/java/com/juliano/gerfin/repository/ContaRepository.java,d\5\d5f95e0f878f879316e768bb4dc6a4b982617c14
 w
