@@ -1,9 +1,9 @@
 package com.juliano.gerfin.controller;
 
-import com.juliano.gerfin.logs.LogType;
-import com.juliano.gerfin.logs.Logs;
+import com.juliano.gerfin.logs.APILogger;
+import com.juliano.gerfin.model.Conta;
 import com.juliano.gerfin.model.Movimentacao;
-import com.juliano.gerfin.service.ContaService;
+import com.juliano.gerfin.model.ResponseDto;
 import com.juliano.gerfin.service.MovimentacaoService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,9 +23,6 @@ import javax.servlet.http.HttpServletRequest;
 public class MovimentacaoController {
 
     @Autowired
-    private Logs logs;
-
-    @Autowired
     private MovimentacaoService movimentacaoService;
 
     private static Logger logger = LoggerFactory.getLogger(ContaController.class);
@@ -43,13 +40,14 @@ public class MovimentacaoController {
             }
             else {
                 var _result = movimentacaoService.insert(mov, idConta);
-                var _response = new ResponseEntity<Movimentacao>(_result, HttpStatus.OK);
-                logs.logRequest(request, headers, _response, LogType.INFO, HttpStatus.OK.toString());
+                var _response = new ResponseEntity<>(_result, HttpStatus.OK);
+                var _responseLog = new ResponseDto<Movimentacao>(_result);
+                APILogger.ok(_responseLog.getData(), APILogger.filterHeader(headers));
                 return _response;
             }
         } catch (Exception e) {
             var _responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-            logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
+            //logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
             return _responseEntity;
         }
     }
@@ -67,13 +65,14 @@ public class MovimentacaoController {
             }
             else {
                 var _result = movimentacaoService.update(idMov, mov);
-                var _response = new ResponseEntity<Movimentacao>(_result, HttpStatus.OK);
-                logs.logRequest(request, headers, _response, LogType.INFO, HttpStatus.OK.toString());
+                var _response = new ResponseEntity<>(_result, HttpStatus.OK);
+                var _responseLog = new ResponseDto<Movimentacao>(_result);
+                APILogger.ok(_responseLog.getData(), APILogger.filterHeader(headers));
                 return _response;
             }
         } catch (Exception e) {
             var _responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-            logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
+            //logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
             return _responseEntity;
         }
     }

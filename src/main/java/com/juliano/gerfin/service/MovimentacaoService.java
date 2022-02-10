@@ -1,6 +1,5 @@
 package com.juliano.gerfin.service;
 
-import com.juliano.gerfin.logs.Logs;
 import com.juliano.gerfin.model.Movimentacao;
 import com.juliano.gerfin.repository.MovimentacaoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,9 +9,6 @@ import java.util.Optional;
 
 @Service
 public class MovimentacaoService {
-
-    @Autowired
-    private Logs logs;
 
     @Autowired
     private MovimentacaoRepository movimentacaoRepository;
