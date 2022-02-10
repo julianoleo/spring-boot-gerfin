@@ -1,5 +1,6 @@
 package com.juliano.gerfin.logs;
 
+import com.juliano.gerfin.exceptions.models.ErrorResponseDto;
 import com.juliano.gerfin.model.RequisicaoDto;
 import com.juliano.gerfin.model.ResponseDto;
 import org.slf4j.Logger;
@@ -15,7 +16,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 import static net.logstash.logback.argument.StructuredArguments.kv;
-
 
 public class APILogger {
 
@@ -86,7 +86,7 @@ public class APILogger {
         );
     }
 
-    public static void noContent(List<ResponseDto> response, HttpHeaders headers) {
+    public static void noContent(List<ErrorResponseDto> response, HttpHeaders headers) {
         logger.warn(
                 "{}{}",
                 kv(REQUISICAO_KEY, getRequisicaoDto(filterHeader(headers))),

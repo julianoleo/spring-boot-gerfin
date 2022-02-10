@@ -13,5 +13,3 @@ p
 @src/main/java/com/juliano/gerfin/repository/ContaRepository.java,d\5\d5f95e0f878f879316e768bb4dc6a4b982617c14
 w
 Gsrc/main/java/com/juliano/gerfin/repository/MovimentacaoRepository.java,e\0\e0b3917b62556dc733fa6a60dc602df8ae278e58
-j
-:src/main/java/com/juliano/gerfin/service/ContaService.java,1\3\13d853f5681742eab2a26f10dd9604dc00d0b04b

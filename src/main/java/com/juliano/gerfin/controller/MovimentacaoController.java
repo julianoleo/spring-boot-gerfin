@@ -16,6 +16,8 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.ConstraintViolationException;
+import java.util.HashSet;
 
 @RestController
 @Validated
@@ -33,23 +35,17 @@ public class MovimentacaoController {
             @RequestParam(name = "id_conta")  String idConta,
             @RequestBody Movimentacao mov,
             @RequestHeader HttpHeaders headers
-    ) throws MissingServletRequestParameterException {
-        try {
-            if(mov.toString().isEmpty()) {
-                throw new RuntimeException("Movimentação Vazia.");
-            }
-            else {
-                var _result = movimentacaoService.insert(mov, idConta);
-                var _response = new ResponseEntity<>(_result, HttpStatus.OK);
-                var _responseLog = new ResponseDto<Movimentacao>(_result);
-                APILogger.ok(_responseLog.getData(), APILogger.filterHeader(headers));
-                return _response;
-            }
-        } catch (Exception e) {
-            var _responseEntity = new ResponseEntity(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-            //logs.logRequest(request, headers, _responseEntity, LogType.ERROR, e.getMessage());
-            return _responseEntity;
-        }
+    ) {
+         if(mov.toString().isEmpty()) {
+             throw new ConstraintViolationException("Movimentação Vazia.", new HashSet<>());
+         }
+         else {
+             var _result = movimentacaoService.insert(mov, idConta);
+             var _response = new ResponseEntity<>(_result, HttpStatus.OK);
+             var _responseLog = new ResponseDto<Movimentacao>(_result);
+             APILogger.ok(_responseLog.getData(), APILogger.filterHeader(headers));
+             return _response;
+         }
     }
 
     @PutMapping("/mov")
